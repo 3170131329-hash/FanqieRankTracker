@@ -76,7 +76,7 @@ def parse_md_to_json(md_path: str) -> dict:
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     data_dir = os.path.join(base_dir, "data")
-    md_files = sorted(glob.glob(os.path.join(data_dir, "fanqie_female_new_ranks_*.md")))
+    md_files = sorted(glob.glob(os.path.join(data_dir, "fanqie_male_new_ranks_*.md")))
 
     if not md_files:
         print("未找到任何 Markdown 文件。")

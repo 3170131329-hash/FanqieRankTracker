@@ -2,7 +2,7 @@
 
 [![English](https://img.shields.io/badge/lang-English-blue)](README_EN.md)
 
-> 👗 专注于**番茄小说女频新书榜**，每日自动追踪排行数据并结合 AI 生成趋势分析，部署为精美的在线看板。
+> 专注于**番茄小说男频新书榜**，每日自动追踪排行数据并结合 AI 生成趋势分析，部署为精美的在线看板。
 
 ---
 
@@ -10,10 +10,10 @@
 
 | 功能 | 说明 |
 |------|------|
-| 🕷️ 自动爬取 | 每日定时抓取番茄女性频道各个分类的新书榜 Top 30 |
+| 🕷️ 自动爬取 | 每日定时抓取番茄男性频道各个分类的新书榜 Top 30 |
 | 📊 趋势对比 | 自动对比相邻两天数据：新上榜 / 掉榜 / 排名变化 / 阅读量增长 |
 | 🤖 AI 风向分析 | 接入 OpenAI 兼容 API，按分类生成市场趋势速评 |
-| 🧭 类型风向标 | 独立趋势页聚合多日数据，用 AI 总结古风言情等综合赛道、具体热门分类和高频题材；未配置 API 时自动规则兜底 |
+| 🧭 类型风向标 | 独立趋势页聚合多日数据，用 AI 总结玄幻仙侠、都市高武等综合赛道、具体热门分类和高频题材；未配置 API 时自动规则兜底 |
 | 📚 短篇推荐 | 访问时按 99 个题材标签实时读取短故事，展示封面、摘要、阅读时长和互动数据，不落盘推荐内容 |
 | 🖥️ 精美看板 | 暗色编辑风格仪表盘，带打字机动画和瀑布流书籍卡片 |
 | 📱 移动适配 | 完整的移动端适配，侧边栏抽屉式菜单 |
@@ -68,7 +68,7 @@
 
 GitHub Actions 已配置为 **每天 UTC 00:00（北京时间 08:00）** 自动运行。之后无需任何手动操作，数据和看板会每天自动更新。
 
-看板右上角的 **风向标** 可进入 `trend.html`，先查看当下火热综合赛道（如古风言情）、具体热门分类和高频题材，再按具体类型查看近 7 / 14 / 30 日或全部周期的趋势分析。全站热点会优先使用 AI 总结，未配置 API 或生成失败时使用规则统计文案兜底。
+看板右上角的 **风向标** 可进入 `trend.html`，先查看当下火热综合赛道（如玄幻仙侠、都市高武）、具体热门分类和高频题材，再按具体类型查看近 7 / 14 / 30 日或全部周期的趋势分析。全站热点会优先使用 AI 总结，未配置 API 或生成失败时使用规则统计文案兜底。
 
 ---
 
@@ -80,13 +80,13 @@ GitHub Actions 已配置为 **每天 UTC 00:00（北京时间 08:00）** 自动�
 |---|---|---|
 | 类型索引 | `api/lastest.json` | 返回所有可用类型及对应 URL |
 | 全量数据 | `api/lastest/all.json` | `type=all`，返回全部分类、趋势和书籍 |
-| 单类型数据 | `api/lastest/<类型>.json` | 返回指定类型的数据，例如 `api/lastest/古风世情.json` |
+| 单类型数据 | `api/lastest/<类型>.json` | 返回指定类型的数据，例如 `api/lastest/西方奇幻.json` |
 
 示例：
 
 ```bash
 curl https://<你的用户名>.github.io/FanqieRankTracker/api/lastest/all.json
-curl https://<你的用户名>.github.io/FanqieRankTracker/api/lastest/古风世情.json
+curl https://<你的用户名>.github.io/FanqieRankTracker/api/lastest/西方奇幻.json
 ```
 
 ---
@@ -136,7 +136,7 @@ FanqieRankTracker/
 ├── scripts/
 │   └── build_latest.py         # 趋势对比 + AI 分析构建脚本
 ├── data/
-│   ├── fanqie_female_new_ranks_YYYYMMDD.json  # 每日原始快照
+│   ├── fanqie_male_new_ranks_YYYYMMDD.json  # 每日原始快照
 │   ├── latest_ranks.json       # 最新聚合数据（看板数据源）
 │   ├── market_summary.json     # 全站热点 AI/规则总结
 │   └── trends/
@@ -193,9 +193,9 @@ FanqieRankTracker/
 </details>
 
 <details>
-<summary><b>Q: 可以换成男频或其他榜单吗？</b></summary>
+<summary><b>Q: 可以换成女频或其他榜单吗？</b></summary>
 
-可以，修改 `scrape_fanqie_ranks.py` 中的 `init_url` 变量，将 URL 改为目标榜单的地址即可。
+可以。当前默认抓取男频新书榜（入口 `https://fanqienovel.com/rank/1_1_1141`，分类链接前缀 `/rank/1_1_`）。要换成其他榜单，修改 `scrape_fanqie_ranks.py` 里的 `init_url`，并把分类过滤前缀改成对应榜单（女频新书榜是 `https://fanqienovel.com/rank/0_1_1139`，前缀 `/rank/0_1_`）。快照文件名、工作流检查路径和前端读取路径也要一起改。
 
 </details>
 

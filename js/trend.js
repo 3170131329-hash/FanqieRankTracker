@@ -12,13 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedDays = 7;
 
     const genreGroups = [
-        { name: '古风言情', categories: ['古风世情', '古言脑洞', '宫斗宅斗', '种田'] },
-        { name: '现代言情', categories: ['现言脑洞', '豪门总裁', '职场婚恋', '青春甜宠'] },
-        { name: '幻想言情', categories: ['玄幻言情', '科幻末世', '悬疑脑洞', '女频悬疑'] },
-        { name: '快穿衍生', categories: ['快穿', '女频衍生'] },
-        { name: '年代民国', categories: ['年代', '民国言情'] },
-        { name: '娱乐星光', categories: ['星光璀璨'] },
-        { name: '游戏体育', categories: ['游戏体育'] },
+        { name: '玄幻仙侠', categories: ['西方奇幻', '东方仙侠', '传统玄幻', '玄幻脑洞', '都市修真'] },
+        { name: '都市高武', categories: ['都市日常', '都市高武', '都市种田', '都市脑洞', '战神赘婿'] },
+        { name: '历史战争', categories: ['历史古代', '历史脑洞', '抗战谍战'] },
+        { name: '悬疑灵异', categories: ['悬疑脑洞', '悬疑灵异'] },
+        { name: '科幻末世', categories: ['科幻末世'] },
+        { name: '游戏衍生', categories: ['游戏体育', '动漫衍生', '男频衍生'] },
     ];
 
     const els = {

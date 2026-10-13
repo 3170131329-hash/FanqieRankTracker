@@ -37,7 +37,7 @@ jobs:
       id: check_data
       run: |
         TODAY=$(date -u +"%Y%m%d")
-        FILE="data/fanqie_female_new_ranks_${TODAY}.json"
+        FILE="data/fanqie_male_new_ranks_${TODAY}.json"
         if [ -f "$FILE" ]; then
           echo "exists=true" >> $GITHUB_OUTPUT
           echo "✅ 今日数据已存在: $FILE，跳过爬取"

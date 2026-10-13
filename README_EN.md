@@ -2,7 +2,7 @@
 
 [![中文](https://img.shields.io/badge/lang-中文-red)](README.md)
 
-> 👗 Focused exclusively on **Fanqie Novel's Female Category (女频)**, featuring daily automated tracking of new book rankings and AI-powered trend analysis, deployed as a premium online dashboard.
+> Focused on **Fanqie Novel's male new-book ranks (男频新书榜)**, featuring daily automated tracking of new book rankings and AI-powered trend analysis, deployed as a premium online dashboard.
 
 ---
 
@@ -10,7 +10,7 @@
 
 | Feature | Description |
 |---------|-------------|
-| 🕷️ Auto Scraping | Daily automated scraping of Top 30 new books across all sub-categories within Fanqie's Female section |
+| 🕷️ Auto Scraping | Daily automated scraping of Top 30 new books across all sub-categories within Fanqie's male new-book ranks |
 | 📊 Trend Analysis | Automatic day-over-day comparison: new entries / dropped / rank changes / readership growth |
 | 🤖 AI Summary | OpenAI-compatible API integration for per-category market trend analysis |
 | 🖥️ Dashboard | Dark editorial-style dashboard with typewriter animation and waterfall book cards |
@@ -112,7 +112,7 @@ FanqieRankTracker/
 ├── scripts/
 │   └── build_latest.py         # Trend comparison + AI analysis build script
 ├── data/
-│   ├── fanqie_female_new_ranks_YYYYMMDD.json  # Daily raw snapshots
+│   ├── fanqie_male_new_ranks_YYYYMMDD.json  # Daily raw snapshots
 │   ├── latest_ranks.json       # Latest aggregated data (dashboard source)
 │   └── trends/
 │       └── YYYY-MM-DD.json     # Trend archives
@@ -164,9 +164,9 @@ Yes! The system will automatically fall back to rule-based summaries (e.g., "3 n
 </details>
 
 <details>
-<summary><b>Q: Can I track other rankings (e.g., male-oriented)?</b></summary>
+<summary><b>Q: Can I track other rankings (e.g., female-oriented)?</b></summary>
 
-Yes, modify the `init_url` variable in `scrape_fanqie_ranks.py` to point to the desired ranking page URL.
+Yes. The default entry is the male new-book list (`https://fanqienovel.com/rank/1_1_1141`, category prefix `/rank/1_1_`). To switch lists, change `init_url` in `scrape_fanqie_ranks.py` and the category href prefix together (female new books use `https://fanqienovel.com/rank/0_1_1139` and `/rank/0_1_`). Snapshot filenames, the workflow check, and the frontend loaders must match.
 
 </details>
 
