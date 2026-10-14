@@ -1,12 +1,12 @@
 {
-  "date": "2026-10-13",
-  "prev_date": "",
+  "date": "2026-10-14",
+  "prev_date": "2026-10-13",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
-      "category_count": 16,
-      "book_count": 320
+      "category_count": 19,
+      "book_count": 380
     },
     {
       "type": "西方奇幻",
@@ -16,6 +16,11 @@
     {
       "type": "东方仙侠",
       "url": "api/lastest/%E4%B8%9C%E6%96%B9%E4%BB%99%E4%BE%A0.json",
+      "book_count": 20
+    },
+    {
+      "type": "科幻末世",
+      "url": "api/lastest/%E7%A7%91%E5%B9%BB%E6%9C%AB%E4%B8%96.json",
       "book_count": 20
     },
     {
@@ -59,6 +64,11 @@
       "book_count": 20
     },
     {
+      "type": "悬疑脑洞",
+      "url": "api/lastest/%E6%82%AC%E7%96%91%E8%84%91%E6%B4%9E.json",
+      "book_count": 20
+    },
+    {
       "type": "都市脑洞",
       "url": "api/lastest/%E9%83%BD%E5%B8%82%E8%84%91%E6%B4%9E.json",
       "book_count": 20
@@ -76,6 +86,11 @@
     {
       "type": "抗战谍战",
       "url": "api/lastest/%E6%8A%97%E6%88%98%E8%B0%8D%E6%88%98.json",
+      "book_count": 20
+    },
+    {
+      "type": "游戏体育",
+      "url": "api/lastest/%E6%B8%B8%E6%88%8F%E4%BD%93%E8%82%B2.json",
       "book_count": 20
     },
     {
